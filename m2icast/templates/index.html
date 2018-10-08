@@ -1,19 +1,27 @@
-
-<!doctype html>
-<html class=".js" lang="en">
+<!DOCTYPE html>
+<html>
+{% load static %}
 
 <head>
-  <meta charset="utf-8">
-  <title>M2ICast</title>
-  <meta name="description" content="Multicast streams for viewing">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% include 'head.html' %}
+    <title>M2ICast</title>
 </head>
 
 <body>
+    <header>
+        <h1>M2ICast</h1>
+    </header>
     <div id="wrapper">
-        <div class="stream-list">
-            <h3>List of multicast streams</h3>
-        </div>
+        <section id="about">
+            <h2>About</h2>
+            <p>M2ICast is a portal for easily finding and viewing multicast streams on Internet2 via an AMT Relay.
+            To properly use M2ICast, VLC with AMT support must be installed. It can be downloaded
+            <a href="https://github.com/Juniper/amt-vlc" target="_blank">here</a>.</p>
+        </section>
+        <section id="streams">
+            <h2>List of Multicast Streams</h2>
+            <div id="stream-list"></div>
+        </section>
     </div>
 </body>
 
