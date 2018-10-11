@@ -9,4 +9,6 @@
 
 * `pip install -e .` will install the required packages.
 
+* Install and set up Redis. 
 
+* Set the SECRET\_KEY and the CELERY\_BROKER\_URL in settings.py to the appropriate values.

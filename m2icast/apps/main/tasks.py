@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+
+from __future__ import absolute_import, unicode_literals
+from celery import task
+
+
 import sys
 import requests
 import re
@@ -38,8 +43,9 @@ class Source():
     def __hash__(self):
         return hash(self.__repr__())
 
-
-def main():
+@task
+def fetch_data():
+    print("Fetching data from Looking Glass")
     global FILENAME
     global BASE_URL
     global VERBOSE
@@ -82,6 +88,3 @@ def main():
         #f.write('Group\tSource\tRouter\tPackets/Second\n')
         f.write('\n'.join([str(out) for out in out_list]))
 
-
-if __name__ == '__main__':
-    main()
