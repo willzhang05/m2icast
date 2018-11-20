@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 from __future__ import absolute_import, unicode_literals
-from celery import task
+from celery import task, shared_task
 
 
 import sys
@@ -43,7 +43,7 @@ class Source():
     def __hash__(self):
         return hash(self.__repr__())
 
-@task
+@shared_task
 def fetch_data():
     print("Fetching data from Looking Glass")
     global FILENAME

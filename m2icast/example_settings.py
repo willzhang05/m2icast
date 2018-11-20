@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'US/Eastern'
 
 USE_I18N = True
 
@@ -124,14 +124,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#CELERY_BROKER_URL = 'amqp://williamzhang:dankmemes420@localhost:5672/m2icast'
 CELERY_BROKER_URL = 'redis://localhost'
 CELERY_RESULT_BACKEND = 'django-db'
-#CELERY_TIMEZONE = 'US/Eastern'
-CELERY_TIMEZONE = 'UTC'
+CELERY_TIMEZONE = 'US/Eastern'
+#CELERY_TIMEZONE = 'UTC'
 CELERY_BEAT_SCHEDULE = {
     'fetch_data': {
         'task': 'm2icast.apps.main.tasks.fetch_data',
-        'schedule': 14400,
+        'schedule': 120,
         },
 }
 
