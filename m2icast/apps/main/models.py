@@ -18,7 +18,7 @@ class Source(models.Model):
         self.packets = int(re.sub(r'[^0-9]', '', st[2]))
         self.router = router
     '''
-
+    '''
     def __repr__(self):
         #return 'Group: {0:25s}\tSource: {1:25s}\tRouter: {2:18s}\tPackets/Second: {3:6d}'.format(self.group, self.source, self.router, self.pps)
         return ','.join([self.group, self.source, self.router, str(self.pps)])
@@ -36,3 +36,4 @@ class Source(models.Model):
 
     def __hash__(self):
         return hash(self.__repr__())
+    '''

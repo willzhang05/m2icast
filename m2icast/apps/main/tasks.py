@@ -14,7 +14,7 @@ BASE_URL = 'https://routerproxy.grnoc.iu.edu/internet2/'
 FILENAME = './ips.txt'
 FORMAT = './mcast-i2-{:%Y-%m-%d-%H:%M:%S}.log'
 VERBOSE = True
-
+'''
 class Source():
     def __init__(self, source, group, stats, router):
         self.source = source
@@ -42,6 +42,7 @@ class Source():
 
     def __hash__(self):
         return hash(self.__repr__())
+'''
 
 @shared_task
 def fetch_data():
