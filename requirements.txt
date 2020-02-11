@@ -3,7 +3,7 @@ billiard==3.5.0.4
 celery==4.2.1
 certifi==2018.10.15
 chardet==3.0.4
-Django==2.1.2
+Django==2.2.10
 django-celery-beat==1.2.0
 django-celery-results==1.0.1
 django-timezone-field==3.0
